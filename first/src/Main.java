@@ -3,25 +3,40 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        int[] array = new int[11];
-        //random array
-        for (int itter = 0; itter < array.length; itter++) {
+    static int[] array = new int[11];
 
-            array[itter] = new Random().nextInt(100);
-            System.out.print(array[itter]+"\t");
+    //printArray
+    public static void printArray(int[] ar) {
+        for (int itter = 0; itter < ar.length; itter++) {
+            System.out.print(ar[itter]+"\t");
         }
         System.out.println();
-        //reverse
-        for (int itter = 0; itter < array.length/2;itter++) {
-            int tmp = array[itter];
-            array[itter]=array[array.length-itter-1];
-            array[array.length-itter-1]=tmp;
+    }
+
+    //randomizeArray
+    public static void randomArray(int[] ar){
+        for (int itter = 0; itter < ar.length; itter++) {
+
+            ar[itter] = new Random().nextInt(100);
         }
-        //print
-        for (int itter = 0; itter < array.length; itter++) {
-            System.out.print(array[itter]+"\t");
+    }
+
+    //reverseArray
+    public static void reverseArray(int[] ar) {
+        for (int itter = 0; itter < ar.length/2;itter++) {
+            int tmp = ar[itter];
+            ar[itter]=ar[ar.length-itter-1];
+            ar[ar.length-itter-1]=tmp;
         }
+    }
+
+
+    public static void main(String[] args) {
+        printArray(array);
+        randomArray(array);
+        printArray(array);
+        reverseArray(array);
+        printArray(array);
     }
 }
 
